@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 export const Card = styled.article`
+  display: inline-flex;
+  flex-direction: column;
   padding: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) inset;
 `;
 
 export const RecipeName = styled.h2`
@@ -20,6 +23,9 @@ export const InfoBlock = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+  /* > svg {
+    color: red;
+  } */
 `;
 
 export const Label = styled.p`

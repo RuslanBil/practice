@@ -1,4 +1,6 @@
-import { HiOutlineChartBar } from 'react-icons/hi';
+import PropTypes from 'prop-types';
+import { HiOutlineChartBar, HiOutlineChartPie } from 'react-icons/hi';
+import { BiAlarm } from 'react-icons/bi';
 import {
   Card,
   InfoContainer,
@@ -16,14 +18,23 @@ export const Recipe = ({ recipe: { name, time, servings, calories } }) => {
           <Label>{time} min</Label>
         </InfoBlock>
         <InfoBlock>
-          <span>Icon</span>
+          <HiOutlineChartPie size={24} />
           <Label>{servings} servings</Label>
         </InfoBlock>
         <InfoBlock>
-          <span>Icon</span>
+          <BiAlarm size={24} />
           <Label>{calories} calories</Label>
         </InfoBlock>
       </InfoContainer>
     </Card>
   );
+};
+
+Recipe.propTypes = {
+  recipe: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    time: PropTypes.string.isRequired,
+    servings: PropTypes.number.isRequired,
+    calories: PropTypes.number.isRequired,
+  }),
 };
